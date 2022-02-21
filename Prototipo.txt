@@ -1,0 +1,19 @@
+Prototipo Juego Asteriods
+-Jugable: *Movimiento básico de la nave (Arriba, Abajo,Derecha, Izquierda, Rotar) con las teclas WASD.
+*Disparar proyectiles al presionar el botón izquierdo del mouse. 
+*Colisionar con los asteroides elimina una vida de las tres que posees. 
+Si se acaban las vidas el jugador pierde. 
+*Spawnear asteorides y lanzarlos con una velocidad (Lenta) y tamaño(Grande) inicial hacia el jugador.
+*Asteriodes grandes reaccionen con los proyectiles destruyendose 
+Se geneneran 2 más de tamaño mediano, 
+Al ser destruidos generan dos pequeños que ya no se duplican y solamente se destruyen.
+*Despues de cada cierto puntuaje aparece un cubo grande que tendra la función de Boss. 
+Disparará al jugador intentando destruirlo. 
+Posee una barra de vida y necesitarás varias rondas de disparos para reducirla. 
+Debe destruirse cuando acabe su barra de vida mientras sigues esquivando asteroides.
+
+-Aspecto: formas básicas de unity.
+
+-UI: Botón en una esquina para reiniciar la escena.
+
+-Plataforma: PC
