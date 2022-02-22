@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D _rigidbody2D;
+    private Rigidbody2D _rigidbody2D = default;
 
     private bool _thrusting = default;
     private float _turnDirection = default;
