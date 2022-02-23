@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Bullet _bulletPrefab = default;
+    [SerializeField] private Bullet _bulletPrefab = default;
 
     private Rigidbody2D _rigidbody2D = default;
 
     private bool _thrusting = default;
     private float _turnDirection = default;
 
-    public float _playerSpeed = 1.0f;
-    public float _turnSpeed = 1.0f;
+    [SerializeField] private float _playerSpeed = 1.0f;
+    [SerializeField] private float _turnSpeed = 1.0f;
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            shoot();
+            Shoot();
         }
     }
 
@@ -52,10 +52,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void shoot()
+    private void Shoot()
     {
-        Bullet _bullet = Instantiate(_bulletPrefab, this.transform.position, this.transform.rotation);
+        Bullet _bullet = Instantiate(_bulletPrefab, transform.position, transform.rotation);
         _bullet.Project(transform.up);
     }
 
 }
+
+

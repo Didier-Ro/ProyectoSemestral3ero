@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float _speed = 500.0f;
+    [SerializeField] private float _speed = 500.0f;
 
-    public float _lifeTime = 10.0f;
+    [SerializeField] private float _lifeTime = 10.0f;
 
-    public Rigidbody2D _rigidbody2D = default;
+    private Rigidbody2D _rigidbody2D = default;
 
     private void Awake()
     {
@@ -17,6 +17,11 @@ public class Bullet : MonoBehaviour
     {
         _rigidbody2D.AddForce(direction * _speed);
         Destroy(gameObject, _lifeTime);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
     }
 
 }
