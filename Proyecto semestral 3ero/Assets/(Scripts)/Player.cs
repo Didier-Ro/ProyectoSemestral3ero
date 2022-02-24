@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         Bullet _bullet = Instantiate(_bulletPrefab, transform.position, transform.rotation);
         _bullet.Project(transform.up);
     }
-
 }
+
 
 
