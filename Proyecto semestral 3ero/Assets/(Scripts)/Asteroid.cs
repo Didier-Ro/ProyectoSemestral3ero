@@ -14,15 +14,20 @@ public class Asteroid : MonoBehaviour
     [SerializeField] private float _speed = 50.0f;
     [SerializeField] private float _lifeTime = 30.0f;
 
+    [SerializeField] private float _minSizeToSplit = 0.5f;
+
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
+    public void Initialize(bool randomizeSize)
     {
-        _size = Random.Range(_minSize, _maxSize);
+        if (randomizeSize)
+        {
+            _size = Random.Range(_minSize, _maxSize);
+        }
 
         _spriteRenderer.sprite = _sprites[Random.Range(0, _sprites.Length)];
 
@@ -42,7 +47,7 @@ public class Asteroid : MonoBehaviour
     {
         if(collision.gameObject.tag == "Bullet")
         {
-            if((_size * 0.5f )>= _minSize)
+            if(_size >= _minSizeToSplit)
             {
                 CreateSplit();
                 CreateSplit();
@@ -58,11 +63,7 @@ public class Asteroid : MonoBehaviour
 
         Asteroid half = Instantiate(this, position, transform.rotation);
         half._size = _size * 0.5f;
+        half.Initialize(false);
         half.SetTrayectory(Random.insideUnitCircle.normalized * _speed);
-    }
-
-    public void SetSize(float newSize)
-    {
-        _size = newSize;
     }
 }
