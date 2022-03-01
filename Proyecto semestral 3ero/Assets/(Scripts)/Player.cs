@@ -58,6 +58,3 @@ public class Player : MonoBehaviour
         _bullet.Project(transform.up);
     }
 }
-
-
-
