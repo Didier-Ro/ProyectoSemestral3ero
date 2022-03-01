@@ -19,7 +19,7 @@ public class AsteroidSpawner : MonoBehaviour
 
     private void Spawn()
     { 
-        for(int i = 0; i < _spawnAmount; i++)
+        for (int i = 0; i < _spawnAmount; i++)
         {
             Vector3 _spawnDirection = Random.insideUnitCircle.normalized * _spawnDistance;
             Vector3 _spawnpoint = transform.position + _spawnDirection;
@@ -28,7 +28,7 @@ public class AsteroidSpawner : MonoBehaviour
             Quaternion rotation = Quaternion.AngleAxis(variance, Vector3.forward);
 
             Asteroid asteroid = Instantiate(_asteriodPrefab, _spawnpoint, rotation);
-            asteroid.SetSize(Random.Range(_minSize, _maxSize));
+            
 
             asteroid.SetTrayectory(rotation * -_spawnDirection);
         }

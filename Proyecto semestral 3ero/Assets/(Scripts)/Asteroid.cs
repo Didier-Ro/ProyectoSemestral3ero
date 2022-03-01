@@ -8,7 +8,6 @@ public class Asteroid : MonoBehaviour
     private Rigidbody2D _rigidbody2D = default;
 
     private float _size = 1.0f;
-
     private float _minSize = 0.5f;
     private float _maxSize = 1.5f;
 
@@ -23,6 +22,8 @@ public class Asteroid : MonoBehaviour
 
     private void Start()
     {
+        _size = Random.Range(_minSize, _maxSize);
+
         _spriteRenderer.sprite = _sprites[Random.Range(0, _sprites.Length)];
 
         transform.eulerAngles = new Vector3(0.0f, 0.0f, Random.value * 360.0f);
