@@ -149,8 +149,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f9fd3acc97ac5c94996c8411498cd466, type: 3}
   - {fileID: 21300000, guid: 30226ad0603675241b103e5403e1fbc9, type: 3}
   - {fileID: 21300000, guid: 36afa13eb2a3add49bc449d8be3c74ee, type: 3}
-  _size: 1
-  _minSize: 0.5
-  _maxSize: 1.5
   _speed: 10
   _lifeTime: 30

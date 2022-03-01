@@ -7,9 +7,10 @@ public class Asteroid : MonoBehaviour
     private SpriteRenderer _spriteRenderer = default;
     private Rigidbody2D _rigidbody2D = default;
 
-    public float _size = 1.0f;
-    public float _minSize = 0.5f;
-    public float _maxSize = 1.5f;
+    private float _size = 1.0f;
+    
+    private float _minSize = 0.5f;
+    private float _maxSize = 1.5f;
 
     [SerializeField] private float _speed = 50.0f;
     [SerializeField] private float _lifeTime = 30.0f;
@@ -34,5 +35,10 @@ public class Asteroid : MonoBehaviour
     {
         _rigidbody2D.AddForce(direction * _speed);
         Destroy(gameObject, _lifeTime);
+    }
+
+    public void SetSize(float newSize)
+    {
+        _size = newSize;
     }
 }
