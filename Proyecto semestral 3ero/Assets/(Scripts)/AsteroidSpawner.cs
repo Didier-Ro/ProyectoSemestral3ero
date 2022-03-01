@@ -25,7 +25,7 @@ public class AsteroidSpawner : MonoBehaviour
             Quaternion rotation = Quaternion.AngleAxis(variance, Vector3.forward);
 
             Asteroid asteroid = Instantiate(_asteriodPrefab, _spawnpoint, rotation);
-            
+            asteroid.Initialize(true);
 
             asteroid.SetTrayectory(rotation * -_spawnDirection);
         }

@@ -151,3 +151,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 36afa13eb2a3add49bc449d8be3c74ee, type: 3}
   _speed: 10
   _lifeTime: 30
+  _minSizeToSplit: 0.7
