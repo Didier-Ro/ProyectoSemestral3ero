@@ -23,6 +23,8 @@ public class Asteroid : MonoBehaviour
 
     private void Start()
     {
+        _size = Random.Range(_minSize, _maxSize);
+
         _spriteRenderer.sprite = _sprites[Random.Range(0, _sprites.Length)];
 
         transform.eulerAngles = new Vector3(0.0f, 0.0f, Random.value * 360.0f);
@@ -35,10 +37,5 @@ public class Asteroid : MonoBehaviour
     {
         _rigidbody2D.AddForce(direction * _speed);
         Destroy(gameObject, _lifeTime);
-    }
-
-    public void SetSize(float newSize)
-    {
-        _size = newSize;
     }
 }
