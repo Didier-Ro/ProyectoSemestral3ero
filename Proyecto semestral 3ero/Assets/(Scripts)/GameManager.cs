@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance { get; private set; }
 
     [SerializeField] private Player _player = default;
 
@@ -12,11 +12,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(GameManager.instance == null)
+        if(Instance == null)
         {
-            GameManager.instance = this;
+            Instance = this;
         }
-        else if(GameManager.instance != this)
+        else if(Instance != this)
         {
             Destroy(gameObject);
         }
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
         if(_lives <= 0)
         {
-            GameOver();
+            //GameOver();
         }
         else
         {
@@ -49,16 +49,9 @@ public class GameManager : MonoBehaviour
         _player.gameObject.layer = LayerMask.NameToLayer("Player");
     }
 
-    private void GameOver()
+    /*private void GameOver()
     {
-        print("Game Over");
-    }
+       //TODO
+    }*/
 
-    private void OnDestroy()
-    {
-        if(GameManager.instance == this)
-        {
-            GameManager.instance = null;
-        }
-    }
 }
