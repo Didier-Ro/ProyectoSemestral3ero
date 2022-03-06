@@ -1,10 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
     [SerializeField] private Player _player = default;
+
+    [SerializeField] private Text _scoreText;
+    [SerializeField] private string _scoreString = "Score: ";
 
     [SerializeField] private int _lives = 3;
     [SerializeField] private float _respawnTime = 3.0f;
@@ -39,6 +43,8 @@ public class GameManager : MonoBehaviour
         else {
             _score += 25;
         }
+
+        _scoreText.text = _scoreString + _score.ToString();
     }
     public void PlayerDied()
     {
