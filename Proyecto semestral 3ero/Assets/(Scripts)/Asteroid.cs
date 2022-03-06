@@ -47,6 +47,7 @@ public class Asteroid : MonoBehaviour
     {
         if(collision.gameObject.tag == "Bullet")
         {
+            GameManager.Instance.AsteroidDestroyed(this);
             if(_size >= _minSizeToSplit)
             {
                 CreateSplit();

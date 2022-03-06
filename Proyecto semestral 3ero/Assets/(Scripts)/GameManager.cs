@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _lives = 3;
     [SerializeField] private float _respawnTime = 3.0f;
     [SerializeField] private float _respawnInvulnerabityTime = 3.0f;
+    [SerializeField] private int _score = default;
+
+    private float _minSize = 0.5f;
+    private float _size = 1.0f;
 
     private void Awake()
     {
@@ -22,6 +26,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void AsteroidDestroyed(Asteroid asteroid)
+    {
+        if(asteroid.transform.localScale.x <= _minSize)
+        {
+            _score += 100;
+        }
+        else if(asteroid.transform.localScale.x <= _size)
+        {
+            _score += 50;
+        }
+        else {
+            _score += 25;
+        }
+    }
     public void PlayerDied()
     {
         _lives--;
