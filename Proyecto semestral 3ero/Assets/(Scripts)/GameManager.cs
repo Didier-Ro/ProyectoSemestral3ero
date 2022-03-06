@@ -26,13 +26,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AsteroidDestroyed(Asteroid asteroid)
+    public void AsteroidDestroyed(float size)
     {
-        if(asteroid.transform.localScale.x <= _minSize)
+        if(size <= _minSize)
         {
             _score += 100;
         }
-        else if(asteroid.transform.localScale.x <= _size)
+        else if(size <= _size)
         {
             _score += 50;
         }
