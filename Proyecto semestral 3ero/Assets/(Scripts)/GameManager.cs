@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
         if(_lives <= 0)
         {
-            //GameOver();
+            GameOver();
         }
         else
         {
@@ -49,9 +49,8 @@ public class GameManager : MonoBehaviour
         _player.gameObject.layer = LayerMask.NameToLayer("Player");
     }
 
-    /*private void GameOver()
+    private void GameOver()
     {
-       //TODO
-    }*/
-
+       //TODO-Didier-06/03-Add GameOver logig
+    }
 }
