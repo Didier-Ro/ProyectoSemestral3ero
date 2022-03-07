@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Player _player = default;
 
-    [SerializeField] private Text _scoreText;
+    [SerializeField] private Text _scoreText = default;
     [SerializeField] private string _scoreString = "Score: ";
 
     [SerializeField] private int _lives = 3;
@@ -40,7 +40,8 @@ public class GameManager : MonoBehaviour
         {
             _score += 50;
         }
-        else {
+        else 
+        {
             _score += 25;
         }
 
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
 
         if(_lives <= 0)
         {
-            //GameOver();
+            GameOver();
         }
         else
         {
@@ -73,9 +74,8 @@ public class GameManager : MonoBehaviour
         _player.gameObject.layer = LayerMask.NameToLayer("Player");
     }
 
-    /*private void GameOver()
+    private void GameOver()
     {
-       //TODO
-    }*/
-
+       //TODO-Didier-06/03-Add GameOver Logig
+    }
 }
