@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,9 +7,16 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Player _player = default;
 
+    [SerializeField] private Text _scoreText = default;
+    [SerializeField] private string _scoreString = "Score: ";
+
     [SerializeField] private int _lives = 3;
     [SerializeField] private float _respawnTime = 3.0f;
     [SerializeField] private float _respawnInvulnerabityTime = 3.0f;
+    [SerializeField] private int _score = default;
+
+    private float _minSize = 0.5f;
+    private float _size = 1.0f;
 
     private void Awake()
     {
@@ -22,6 +30,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void AsteroidDestroyed(float size)
+    {
+        if(size <= _minSize)
+        {
+            _score += 100;
+        }
+        else if(size <= _size)
+        {
+            _score += 50;
+        }
+        else 
+        {
+            _score += 25;
+        }
+
+        _scoreText.text = _scoreString + _score.ToString();
+    }
     public void PlayerDied()
     {
         _lives--;
@@ -51,6 +76,6 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-       //TODO-Didier-06/03-Add GameOver logig
+       //TODO-Didier-06/03-Add GameOver Logig
     }
 }
