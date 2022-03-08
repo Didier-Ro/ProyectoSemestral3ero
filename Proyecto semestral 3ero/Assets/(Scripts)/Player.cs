@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -5,6 +6,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Bullet _bulletPrefab = default;
 
     private Rigidbody2D _rigidbody2D = default;
+    private SpriteRenderer _spriteRenderer = default;
 
     private bool _thrusting = default;
     private float _turnDirection = default;
@@ -12,9 +14,13 @@ public class Player : MonoBehaviour
     [SerializeField] private float _playerSpeed = 1.0f;
     [SerializeField] private float _turnSpeed = 1.0f;
 
+    [SerializeField] private float _invulnerabilityTime = 3f;
+    [SerializeField] private float _numberOfOpacityStepsPerSecond = 2f;
+
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -65,9 +71,31 @@ public class Player : MonoBehaviour
             _rigidbody2D.velocity = Vector3.zero;
             _rigidbody2D.angularDrag = 0.0f;
 
-            gameObject.SetActive(false);
+            _spriteRenderer.enabled = false;
 
             GameManager.Instance.PlayerDied();
         }
+    }
+
+    public void BecomeInvulnerable()
+    {
+        StartCoroutine(InvulnerabilityCoroutine());
+    }
+
+    IEnumerator InvulnerabilityCoroutine()
+    {
+        gameObject.layer = LayerMask.NameToLayer("Ignore Collisions");
+        _spriteRenderer.enabled = true;
+        float opacitySteps = _invulnerabilityTime * _numberOfOpacityStepsPerSecond;
+        float opacityTime = _invulnerabilityTime / opacitySteps;
+
+        for(int i = 0; i < opacitySteps; i++)
+        {
+            _spriteRenderer.color = new Color(1, 1, 1, 0);
+            yield return new WaitForSeconds(opacityTime);
+            _spriteRenderer.color = new Color(1, 1, 1, 1);
+            yield return new WaitForSeconds(opacityTime);
+        }
+        gameObject.layer = LayerMask.NameToLayer("Player");
     }
 }

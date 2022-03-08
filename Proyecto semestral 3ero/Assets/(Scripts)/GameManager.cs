@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string _scoreString = "Score: ";
 
     [SerializeField] private int _lives = 3;
-    [SerializeField] private float _respawnTime = 3.0f;
-    [SerializeField] private float _opacityTime = 0.5f;
     [SerializeField] private int _score = default;
 
     private float _minSize = 0.5f;
@@ -58,34 +56,14 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Invoke(nameof(Respawn), _respawnTime);
+            Respawn();
         }
     }
 
     private void Respawn()
     {
         _player.transform.position = Vector3.zero;
-        _player.gameObject.layer = LayerMask.NameToLayer("Ignore Collisions");
-        _player.gameObject.SetActive(true);
-        StartCoroutine("Invulnerability");
-    }
-
-    IEnumerator Invulnerability()
-    {
-        _player.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        yield return new WaitForSeconds(_opacityTime);
-        _player.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        yield return new WaitForSeconds(_opacityTime);
-        _player.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        yield return new WaitForSeconds(_opacityTime);
-        _player.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        yield return new WaitForSeconds(_opacityTime);
-        _player.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        yield return new WaitForSeconds(_opacityTime);
-        _player.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        yield return new WaitForSeconds(_opacityTime);
-        _player.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        _player.gameObject.layer = LayerMask.NameToLayer("Player");
+        _player.BecomeInvulnerable();
     }
 
     private void GameOver()
