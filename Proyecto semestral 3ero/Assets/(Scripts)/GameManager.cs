@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
     private float _minSize = 0.5f;
     private float _size = 1.0f;
 
+    [SerializeField] private int _asteroidMinSizeScore = 100;
+    [SerializeField] private int _asteroidMiddleSizeScore = 50;
+    [SerializeField] private int _asteroidMaxSizeScore = 25;
+
     private void Awake()
     {
         if(Instance == null)
@@ -34,15 +38,15 @@ public class GameManager : MonoBehaviour
     {
         if(size <= _minSize)
         {
-            _score += 100;
+            _score += _asteroidMinSizeScore;
         }
         else if(size <= _size)
         {
-            _score += 50;
+            _score += _asteroidMiddleSizeScore;
         }
         else 
         {
-            _score += 25;
+            _score += _asteroidMaxSizeScore;
         }
 
         _scoreText.text = _scoreString + _score.ToString();
