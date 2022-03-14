@@ -25,23 +25,26 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        _thrusting = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
+        if (GameManager.Instance.IsGameRunnig())
+        {
+            _thrusting = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
 
-        if (Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.LeftArrow))
-        {
-            _turnDirection = 1.0f;
-        }
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            _turnDirection = -1.0f;
-        }
-        else
-        {
-            _turnDirection = 0;
-        }
-        if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
-        {
-            Shoot();
+            if (Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.LeftArrow))
+            {
+                _turnDirection = 1.0f;
+            }
+            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
+                _turnDirection = -1.0f;
+            }
+            else
+            {
+                _turnDirection = 0;
+            }
+            if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            {
+                Shoot();
+            }
         }
     }
 

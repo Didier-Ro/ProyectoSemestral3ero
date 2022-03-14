@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,29 +16,39 @@ public class GameManager : MonoBehaviour
     private float _minSize = 0.5f;
     private float _size = 1.0f;
 
+    private bool _gameRunning = true;
+
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
-        else if(Instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ChangeRunningState();
+        }
+    }
+
     public void AsteroidDestroyed(float size)
     {
-        if(size <= _minSize)
+        if (size <= _minSize)
         {
             _score += 100;
         }
-        else if(size <= _size)
+        else if (size <= _size)
         {
             _score += 50;
         }
-        else 
+        else
         {
             _score += 25;
         }
@@ -50,7 +59,7 @@ public class GameManager : MonoBehaviour
     {
         _lives--;
 
-        if(_lives <= 0)
+        if (_lives <= 0)
         {
             GameOver();
         }
@@ -68,6 +77,25 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-       //TODO-Didier-06/03-Add GameOver Logig
+        //TODO-Didier-06/03-Add GameOver Logig
+    }
+
+    private void ChangeRunningState()
+    {
+        _gameRunning = !_gameRunning;
+
+        if (_gameRunning)
+        {
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            Time.timeScale = 0f;
+        }
+    } 
+
+    public bool IsGameRunnig()
+    {
+        return _gameRunning;
     }
 }
