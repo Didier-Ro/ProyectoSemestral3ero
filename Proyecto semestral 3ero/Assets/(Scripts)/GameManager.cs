@@ -11,8 +11,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string _scoreString = "Score: ";
 
     [SerializeField] private int _lives = 3;
-    [SerializeField] private float _respawnTime = 3.0f;
-    [SerializeField] private float _respawnInvulnerabityTime = 3.0f;
     [SerializeField] private int _score = default;
 
     private float _minSize = 0.5f;
@@ -22,29 +20,43 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _asteroidMiddleSizeScore = 50;
     [SerializeField] private int _asteroidMaxSizeScore = 25;
 
+    [SerializeField] private GameObject _gameOverText = default;
+    [SerializeField] private GameObject _playAgainButton = default;
+    [SerializeField] private GameObject _returnMenuButton = default;
+
+    private bool _gameRunning = true;
+
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
-        else if(Instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ChangeRunningState();
+        }
+    }
+
     public void AsteroidDestroyed(float size)
     {
-        if(size <= _minSize)
+        if (size <= _minSize)
         {
             _score += _asteroidMinSizeScore;
         }
-        else if(size <= _size)
+        else if (size <= _size)
         {
             _score += _asteroidMiddleSizeScore;
         }
-        else 
+        else
         {
             _score += _asteroidMaxSizeScore;
         }
@@ -55,31 +67,45 @@ public class GameManager : MonoBehaviour
     {
         _lives--;
 
-        if(_lives <= 0)
+        if (_lives <= 0)
         {
             GameOver();
         }
         else
         {
-            Invoke(nameof(Respawn), _respawnTime);
+            Respawn();
         }
     }
 
     private void Respawn()
     {
         _player.transform.position = Vector3.zero;
-        _player.gameObject.layer = LayerMask.NameToLayer("Ignore Collisions");
-        _player.gameObject.SetActive(true);
-        Invoke(nameof(TurnOnCollisions), _respawnInvulnerabityTime);
-    }
-
-    private void TurnOnCollisions()
-    {
-        _player.gameObject.layer = LayerMask.NameToLayer("Player");
+        _player.BecomeInvulnerable();
     }
 
     private void GameOver()
     {
-       //TODO-Didier-06/03-Add GameOver Logig
+        _gameOverText.SetActive(true);
+        _playAgainButton.SetActive(true);
+        _returnMenuButton.SetActive(true);
+    }
+
+    private void ChangeRunningState()
+    {
+        _gameRunning = !_gameRunning;
+
+        if (_gameRunning)
+        {
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            Time.timeScale = 0f;
+        }
+    } 
+
+    public bool IsGameRunnig()
+    {
+        return _gameRunning;
     }
 }
