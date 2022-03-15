@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
         {
             _thrusting = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
 
-            if (Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 _turnDirection = 1.0f;
             }
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
             {
                 _turnDirection = 0;
             }
-            if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
                 Shoot();
             }
@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Asteroid")
+        if (collision.gameObject.tag == "Asteroid")
         {
             _rigidbody2D.velocity = Vector3.zero;
             _rigidbody2D.angularDrag = 0.0f;
@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
         float opacitySteps = _invulnerabilityTime * _numberOfOpacityStepsPerSecond;
         float opacityTime = _invulnerabilityTime / opacitySteps;
 
-        for(int i = 0; i < opacitySteps; i++)
+        for (int i = 0; i < opacitySteps; i++)
         {
             _spriteRenderer.color = new Color(1, 1, 1, 0);
             yield return new WaitForSeconds(opacityTime);
