@@ -6,7 +6,7 @@ public class RadialMovement : MonoBehaviour
 
     private Rigidbody2D _rigidBody2D;
 
-    [SerializeField] private float _positionXForce = 2f;
+    [SerializeField] private float _positionXForce = 1f;
 
     void Start()
     {
@@ -16,6 +16,12 @@ public class RadialMovement : MonoBehaviour
     private void Update()
     {
         transform.LookAt(_player.transform.position);
+
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, _player.transform.position, out hit, 50f))
+        {
+            Debug.DrawRay(transform.position, _player.transform.position, Color.green);
+        }
     }
 
     private void FixedUpdate()
@@ -25,6 +31,7 @@ public class RadialMovement : MonoBehaviour
 
     private void RadialMove()
     {
-        _rigidBody2D.AddForce(transform.right * _positionXForce, ForceMode2D.Impulse);
+        //transform.position = new Vector2(_positionXForce * Time.fixedDeltaTime, 0);
+        //transform.position = new Vector2(0,_positionXForce * Time.fixedDeltaTime);
     }
 }
