@@ -9,10 +9,12 @@ public class Player : MonoBehaviour
     private SpriteRenderer _spriteRenderer = default;
 
     private bool _thrusting = default;
+    private bool _turboActivate = default;
     private float _turnDirection = default;
 
     [SerializeField] private float _playerSpeed = 1.0f;
     [SerializeField] private float _turnSpeed = 1.0f;
+    [SerializeField] private float _turboPlayer = 1.0f;
 
     [SerializeField] private float _invulnerabilityTime = 3f;
     [SerializeField] private float _numberOfOpacityStepsPerSecond = 2f;
@@ -44,6 +46,11 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
                 Shoot();
+            }
+
+            if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
+            {
+                Turbo();
             }
         }
     }
@@ -78,6 +85,11 @@ public class Player : MonoBehaviour
 
             GameManager.Instance.PlayerDied();
         }
+    }
+
+    private void Turbo()
+    {
+        _rigidbody2D.AddForce(transform.up * (_playerSpeed + _turboPlayer), ForceMode2D.Force);
     }
 
     public void BecomeInvulnerable()
