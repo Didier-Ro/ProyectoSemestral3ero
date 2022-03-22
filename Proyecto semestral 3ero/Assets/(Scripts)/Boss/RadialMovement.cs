@@ -6,7 +6,13 @@ public class RadialMovement : MonoBehaviour
 
     private Rigidbody2D _rigidBody2D;
 
-    [SerializeField] private float _positionXForce = 1f;
+    [SerializeField] private float _rotatedVelocity = 1f;
+    [SerializeField] private float _distancePlayer = default;
+
+    [SerializeField] private float _minDistance = 3.5f;
+    [SerializeField] private float _maxDistance = 4.5f;
+
+    [SerializeField] private float _speed = 10f;
 
     void Start()
     {
@@ -16,7 +22,18 @@ public class RadialMovement : MonoBehaviour
     private void Update()
     {
         transform.LookAt(_player.transform.position);
-        //transform.localPosition += Vector3.right * Time.deltaTime;
+        var direction = _player.transform.position - transform.position;
+        _distancePlayer = direction.magnitude;
+
+        if (_distancePlayer < _minDistance)
+        {
+            transform.Translate(-direction * (Time.deltaTime * _speed));
+        }
+
+        if (_distancePlayer > _maxDistance)
+        {
+            transform.Translate(direction * (Time.deltaTime * _speed));
+        }
     }
 
     private void FixedUpdate()
@@ -26,7 +43,6 @@ public class RadialMovement : MonoBehaviour
 
     private void RadialMove()
     {
-        //transform.position = new Vector2(_positionXForce * Time.fixedDeltaTime, 0);
-        //transform.position = new Vector2(0,_positionXForce * Time.fixedDeltaTime);
+        transform.RotateAround(_player.transform.position, Vector3.forward, _rotatedVelocity);
     }
 }
