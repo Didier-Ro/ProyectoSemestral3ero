@@ -9,12 +9,14 @@ public class Player : MonoBehaviour
     private SpriteRenderer _spriteRenderer = default;
 
     private bool _thrusting = default;
-    private bool _turboActivate = default;
+    private bool _turboActivate = true;
     private float _turnDirection = default;
 
-    [SerializeField] private float _playerSpeed = 1.0f;
-    [SerializeField] private float _turnSpeed = 1.0f;
-    [SerializeField] private float _turboPlayer = 1.0f;
+    [SerializeField] private float _playerSpeed = 1f;
+    [SerializeField] private float _turnSpeed = 1f;
+    [SerializeField] private float _turboPlayer = 1f;
+    [SerializeField] private float _turboReloadTime = 5f;
+    [SerializeField] private float _turboLockedTime = 0.2f;
 
     [SerializeField] private float _invulnerabilityTime = 3f;
     [SerializeField] private float _numberOfOpacityStepsPerSecond = 2f;
@@ -50,7 +52,10 @@ public class Player : MonoBehaviour
 
             if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
             {
-                Turbo();
+                if (_turboActivate)
+                {
+                    StartCoroutine(Turbo());
+                }
             }
         }
     }
@@ -74,6 +79,15 @@ public class Player : MonoBehaviour
         _bullet.Project(transform.up);
     }
 
+    IEnumerator Turbo()
+    {
+        _rigidbody2D.AddForce(transform.up * (_playerSpeed + _turboPlayer), ForceMode2D.Force);
+        yield return new WaitForSeconds(_turboLockedTime);
+        _turboActivate = false;
+        yield return new WaitForSeconds(_turboReloadTime);
+        _turboActivate = true;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Asteroid")
@@ -85,11 +99,6 @@ public class Player : MonoBehaviour
 
             GameManager.Instance.PlayerDied();
         }
-    }
-
-    private void Turbo()
-    {
-        _rigidbody2D.AddForce(transform.up * (_playerSpeed + _turboPlayer), ForceMode2D.Force);
     }
 
     public void BecomeInvulnerable()
