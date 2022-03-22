@@ -16,12 +16,7 @@ public class RadialMovement : MonoBehaviour
     private void Update()
     {
         transform.LookAt(_player.transform.position);
-
-        RaycastHit hit;
-        if(Physics.Raycast(transform.position, _player.transform.position, out hit, 50f))
-        {
-            Debug.DrawRay(transform.position, _player.transform.position, Color.green);
-        }
+        //transform.localPosition += Vector3.right * Time.deltaTime;
     }
 
     private void FixedUpdate()
