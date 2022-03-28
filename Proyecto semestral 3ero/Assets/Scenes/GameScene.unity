@@ -1607,6 +1607,9 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 1584274055215947355, guid: 1c1845f8573a41549892efa7dd909bc8, type: 3}
   _playerSpeed: 1
   _turnSpeed: 0.2
+  _turboPlayer: 1
+  _turboReloadTime: 5
+  _turboLockedTime: 0.2
   _invulnerabilityTime: 3
   _numberOfOpacityStepsPerSecond: 4
 --- !u!50 &1997655077

@@ -9,10 +9,14 @@ public class Player : MonoBehaviour
     private SpriteRenderer _spriteRenderer = default;
 
     private bool _thrusting = default;
+    private bool _turboActivate = true;
     private float _turnDirection = default;
 
-    [SerializeField] private float _playerSpeed = 1.0f;
-    [SerializeField] private float _turnSpeed = 1.0f;
+    [SerializeField] private float _playerSpeed = 1f;
+    [SerializeField] private float _turnSpeed = 1f;
+    [SerializeField] private float _turboPlayer = 1f;
+    [SerializeField] private float _turboReloadTime = 5f;
+    [SerializeField] private float _turboLockedTime = 0.2f;
 
     [SerializeField] private float _invulnerabilityTime = 3f;
     [SerializeField] private float _numberOfOpacityStepsPerSecond = 2f;
@@ -45,6 +49,14 @@ public class Player : MonoBehaviour
             {
                 Shoot();
             }
+
+            if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
+            {
+                if (_turboActivate)
+                {
+                    StartCoroutine(Turbo());
+                }
+            }
         }
     }
 
@@ -65,6 +77,15 @@ public class Player : MonoBehaviour
     {
         Bullet _bullet = Instantiate(_bulletPrefab, transform.position, transform.rotation);
         _bullet.Project(transform.up);
+    }
+
+    IEnumerator Turbo()
+    {
+        _rigidbody2D.AddForce(transform.up * (_playerSpeed + _turboPlayer), ForceMode2D.Force);
+        yield return new WaitForSeconds(_turboLockedTime);
+        _turboActivate = false;
+        yield return new WaitForSeconds(_turboReloadTime);
+        _turboActivate = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
