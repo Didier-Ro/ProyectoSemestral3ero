@@ -10,7 +10,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text _scoreText = default;
     [SerializeField] private string _scoreString = "Score: ";
 
-    [SerializeField] private int _lives = 3;
+    [SerializeField] private Text _lifeText = default;
+    [SerializeField] private string _lifeString = "X";
+
+    [SerializeField] private int _lifes = 3;
     [SerializeField] private int _score = default;
 
     private float _minSize = 0.5f;
@@ -36,6 +39,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        _lifeText.text = _lifeString + _lifes.ToString();
     }
 
     private void Update()
@@ -65,9 +70,11 @@ public class GameManager : MonoBehaviour
     }
     public void PlayerDied()
     {
-        _lives--;
+        _lifes--;
 
-        if (_lives <= 0)
+        _lifeText.text = _lifeString + _lifes.ToString();
+
+        if (_lifes <= 0)
         {
             GameOver();
         }
