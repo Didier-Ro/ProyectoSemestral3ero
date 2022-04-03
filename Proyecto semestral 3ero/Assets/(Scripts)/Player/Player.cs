@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Asteroid")
+        if (collision.gameObject.CompareTag("Asteroid") || collision.gameObject.CompareTag("BossBullet"))
         {
             _rigidbody2D.velocity = Vector3.zero;
             _rigidbody2D.angularDrag = 0.0f;

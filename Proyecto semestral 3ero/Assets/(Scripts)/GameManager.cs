@@ -7,6 +7,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Player _player = default;
 
+    private GameObject _bossPrefab = default;
+    [SerializeField] private GameObject _boss = default;
+    [SerializeField] private Transform _spawnBoss = default;
+    [SerializeField] private int _scoreToAppearBoss = default;
+    [SerializeField] private int _bossMaxScore = 1000;
+    [SerializeField] private bool _isBossAlive = false;
+    [SerializeField] private bool _bossOnField = false;
+
     [SerializeField] private Text _scoreText = default;
     [SerializeField] private string _scoreString = "Score: ";
 
@@ -49,6 +57,19 @@ public class GameManager : MonoBehaviour
         {
             ChangeRunningState();
         }
+
+        if (_bossOnField == false)
+        {
+            if (_scoreToAppearBoss >= _bossMaxScore)
+            {
+                _isBossAlive = true;
+            }
+            if (_isBossAlive)
+            {
+                AppearBoss();
+                _isBossAlive = false;
+            }
+        }
     }
 
     public void AsteroidDestroyed(float size)
@@ -66,7 +87,22 @@ public class GameManager : MonoBehaviour
             _score += _asteroidMaxSizeScore;
         }
 
+        _scoreToAppearBoss = _score;
+
         _scoreText.text = _scoreString + _score.ToString();
+    }
+
+    private void AppearBoss()
+    {
+        _bossOnField = true;
+        _bossPrefab = Instantiate(_boss, _spawnBoss.transform.position, Quaternion.identity);
+    }
+
+    public void BossDead()
+    {
+        Destroy(_bossPrefab);
+        _bossOnField = false;
+        _bossMaxScore = _score * 2;
     }
     public void PlayerDied()
     {
@@ -77,6 +113,7 @@ public class GameManager : MonoBehaviour
         if (_lifes <= 0)
         {
             GameOver();
+            _lifeText.text = _lifeString + 0.ToString();
         }
         else
         {
