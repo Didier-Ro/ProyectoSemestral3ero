@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Bullet
   - Asteroid
+  - Right Wall
+  - Left Wall
+  - BossBullet
   layers:
   - Default
   - TransparentFX
@@ -17,8 +20,8 @@ TagManager:
   - Asteroid
   - Wall
   - Ignore Collisions
-  - 
-  - 
+  - Boss
+  - BossBullet
   - 
   - 
   - 

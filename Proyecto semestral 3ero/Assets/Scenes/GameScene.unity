@@ -280,6 +280,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1997655076}
+  _boss: {fileID: 5288063069349375254, guid: cbc9ad41a866ddf4d869d0bf2cfe29a7, type: 3}
+  _spawnBoss: {fileID: 725319288}
+  _scoreToAppearBoss: 0
+  _bossMaxScore: 200
+  _isBossAlive: 0
+  _bossOnField: 0
   _scoreText: {fileID: 1573415138}
   _scoreString: 'Score: '
   _lifeText: {fileID: 1274828115}
@@ -718,6 +724,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 776589788}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &725319287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 725319288}
+  m_Layer: 0
+  m_Name: SpawnBoss
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &725319288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725319287}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &776589787
 GameObject:
@@ -1446,7 +1482,7 @@ GameObject:
   - component: {fileID: 1451852670}
   m_Layer: 8
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Right Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1555,7 +1591,7 @@ GameObject:
   - component: {fileID: 1543986819}
   m_Layer: 8
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Left Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1745,7 +1781,7 @@ GameObject:
   - component: {fileID: 1997655076}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
