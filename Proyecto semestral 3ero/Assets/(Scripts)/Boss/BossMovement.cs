@@ -12,11 +12,13 @@ public class BossMovement : MonoBehaviour
 
     private int _direction = 1;
 
-    void Update()
+    private void Start()
     {
         _rightWall = GameObject.FindGameObjectWithTag("Right Wall").GetComponent<Transform>();
-        _leftWall = GameObject.FindGameObjectWithTag("Left Wall").GetComponent<Transform>();
-
+        _leftWall = GameObject.FindGameObjectWithTag("Left Wall").GetComponent<Transform>();    
+    }
+    void Update()
+    {
         transform.DOMoveY(_bossPosition, 2f);
 
         if (transform.position.y <= _bossPositionMaxlimit)
