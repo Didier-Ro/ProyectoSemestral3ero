@@ -117,14 +117,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Respawn();
+            _player.Respawn();
         }
-    }
-
-    private void Respawn()
-    {
-        _player.transform.position = Vector3.zero;
-        _player.BecomeInvulnerable();
     }
 
     private void GameOver()

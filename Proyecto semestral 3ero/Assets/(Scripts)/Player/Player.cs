@@ -123,6 +123,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void Respawn()
+    {
+        ResetPlayer();
+    }
+
+    private void ResetPlayer()
+    {
+        transform.position = Vector3.zero;
+        _rigidbody2D.angularVelocity = 0;
+        BecomeInvulnerable();
+    }
+
     public void BecomeInvulnerable()
     {
         StartCoroutine(InvulnerabilityCoroutine());
