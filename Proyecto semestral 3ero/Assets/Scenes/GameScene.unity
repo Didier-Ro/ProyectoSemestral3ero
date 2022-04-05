@@ -2146,8 +2146,10 @@ MonoBehaviour:
   _turboLockedTime: 0.2
   _invulnerabilityTime: 3
   _numberOfOpacityStepsPerSecond: 4
-  _powerUpDuration: 6
-  _bulletsPerSecond: 10
+  _numberOfRounds: 6
+  _bulletsPerRound: 10
+  _delayTime: 0.1
+  _shieldRenderer: {fileID: 1542404698}
   _shield: {fileID: 1542404695}
   _shieldTime: 6
 --- !u!50 &1997655077

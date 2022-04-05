@@ -22,9 +22,11 @@ public class Player : MonoBehaviour
     [SerializeField] private float _invulnerabilityTime = 3f;
     [SerializeField] private float _numberOfOpacityStepsPerSecond = 2f;
 
-    [SerializeField] private float _powerUpDuration = 6f;
-    [SerializeField] private float _bulletsPerSecond = 10f;
+    [SerializeField] private float _numberOfRounds = 6f;
+    [SerializeField] private float _bulletsPerRound = 10f;
+    [SerializeField] private float _delayTime = 0.1f;
 
+    [SerializeField] private SpriteRenderer _shieldRenderer = default;
     [SerializeField] private GameObject _shield = default;
     [SerializeField] private float _shieldTime = 6f;
 
@@ -32,6 +34,7 @@ public class Player : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _shieldRenderer = _shield.GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -148,25 +151,26 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(_timeToReturnAngularDrag);
         _rigidbody2D.angularDrag = 0.0f;
     }
+
     IEnumerator InfinityShoot()
     {
-        for (int i = 0; i < _powerUpDuration; i++)
+        for (int i = 0; i < _numberOfRounds; i++)
         {
-            for (int j = 0; j < _bulletsPerSecond; j++)
+            for (int j = 0; j < _bulletsPerRound; j++)
             {
                 Bullet bullet = Instantiate(_bulletPrefab, transform.position, transform.rotation);
                 bullet.Project(transform.up);
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(_delayTime);
             }
         }
     }
 
     IEnumerator Shield()
     {
-        _shield.GetComponent<SpriteRenderer>().enabled = true;
+        _shieldRenderer.enabled = true;
         _shield.layer = LayerMask.NameToLayer("Shield");
         yield return new WaitForSeconds(_shieldTime);
-        _shield.GetComponent<SpriteRenderer>().enabled = false;
+        _shieldRenderer.enabled = false;
         _shield.layer = LayerMask.NameToLayer("Ignore Collisions");
     }
 }
