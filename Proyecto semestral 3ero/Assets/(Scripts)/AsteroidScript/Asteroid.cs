@@ -45,7 +45,7 @@ public class Asteroid : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Bullet")
+        if(collision.gameObject.CompareTag("Bullet"))
         {
             GameManager.Instance.AsteroidDestroyed(_size);
             if(_size >= _minSizeToSplit)
@@ -53,6 +53,11 @@ public class Asteroid : MonoBehaviour
                 CreateSplit();
                 CreateSplit();
             }
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Shield"))
+        {
             Destroy(gameObject);
         }
     }

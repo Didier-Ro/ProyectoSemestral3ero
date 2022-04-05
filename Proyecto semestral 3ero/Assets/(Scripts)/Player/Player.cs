@@ -14,12 +14,19 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float _playerSpeed = 1f;
     [SerializeField] private float _turnSpeed = 1f;
+    [SerializeField] private float _timeToReturnAngularDrag = 0.2f;
     [SerializeField] private float _turboPlayer = 1f;
     [SerializeField] private float _turboReloadTime = 5f;
     [SerializeField] private float _turboLockedTime = 0.2f;
 
     [SerializeField] private float _invulnerabilityTime = 3f;
     [SerializeField] private float _numberOfOpacityStepsPerSecond = 2f;
+
+    [SerializeField] private float _powerUpDuration = 6f;
+    [SerializeField] private float _bulletsPerSecond = 10f;
+
+    [SerializeField] private GameObject _shield = default;
+    [SerializeField] private float _shieldTime = 6f;
 
     private void Awake()
     {
@@ -93,11 +100,23 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Asteroid") || collision.gameObject.CompareTag("BossBullet"))
         {
             _rigidbody2D.velocity = Vector3.zero;
-            _rigidbody2D.angularDrag = 0.0f;
-
+            StartCoroutine(ReduceTorque());
             _spriteRenderer.enabled = false;
 
             GameManager.Instance.PlayerDied();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Infinity Power Up"))
+        {
+            StartCoroutine(InfinityShoot());
+        }
+
+        if (collision.gameObject.CompareTag("Shield Power Up"))
+        {
+            StartCoroutine(Shield());
         }
     }
 
@@ -121,5 +140,33 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(opacityTime);
         }
         gameObject.layer = LayerMask.NameToLayer("Player");
+    }
+
+    IEnumerator ReduceTorque()
+    {
+        _rigidbody2D.angularDrag = 50f;
+        yield return new WaitForSeconds(_timeToReturnAngularDrag);
+        _rigidbody2D.angularDrag = 0.0f;
+    }
+    IEnumerator InfinityShoot()
+    {
+        for (int i = 0; i < _powerUpDuration; i++)
+        {
+            for (int j = 0; j < _bulletsPerSecond; j++)
+            {
+                Bullet bullet = Instantiate(_bulletPrefab, transform.position, transform.rotation);
+                bullet.Project(transform.up);
+                yield return new WaitForSeconds(0.1f);
+            }
+        }
+    }
+
+    IEnumerator Shield()
+    {
+        _shield.GetComponent<SpriteRenderer>().enabled = true;
+        _shield.layer = LayerMask.NameToLayer("Shield");
+        yield return new WaitForSeconds(_shieldTime);
+        _shield.GetComponent<SpriteRenderer>().enabled = false;
+        _shield.layer = LayerMask.NameToLayer("Ignore Collisions");
     }
 }
