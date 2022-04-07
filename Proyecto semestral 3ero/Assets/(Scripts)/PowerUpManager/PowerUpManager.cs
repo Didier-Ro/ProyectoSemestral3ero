@@ -5,11 +5,11 @@ public class PowerUpManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] _powerUps = default;
     private Vector2 _position = default;
-    private float MinX = -10f;
-    private float MaxX = 10f;
-    private float MinY = -6f;
-    private float MaxY = 6f;
-    private float _spawningTime = 60f; 
+    private float MinX = -9.5f;
+    private float MaxX = 9.5f;
+    private float MinY = -5f;
+    private float MaxY = 5f;
+    private float _spawningTime = 5f; 
     private bool _spawnPowerUP = true;
 
     void Update()
@@ -27,7 +27,6 @@ public class PowerUpManager : MonoBehaviour
         int NumberofPowerUps = Random.Range(0, _powerUps.Length);
         _position = new Vector2(Random.Range(MinX, MaxX), Random.Range(MinY, MaxY));
         GameObject powerUp = Instantiate(_powerUps[NumberofPowerUps], _position, Quaternion.identity);
-        powerUp.transform.parent = transform;
         _spawnPowerUP = true;
     }
 }
