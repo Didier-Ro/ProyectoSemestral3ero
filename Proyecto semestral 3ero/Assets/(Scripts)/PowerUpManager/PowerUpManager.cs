@@ -9,7 +9,7 @@ public class PowerUpManager : MonoBehaviour
     private float MaxX = 9.5f;
     private float MinY = -5f;
     private float MaxY = 5f;
-    private float _spawningTime = 5f; 
+    [SerializeField] private float _spawningTime = 5f; 
     private bool _spawnPowerUP = true;
 
     void Update()

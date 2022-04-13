@@ -121,7 +121,6 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(Shield());
         }
-
         Destroy(collision.gameObject);
     }
 
