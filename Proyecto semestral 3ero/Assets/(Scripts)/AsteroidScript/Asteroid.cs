@@ -54,11 +54,13 @@ public class Asteroid : MonoBehaviour
                 CreateSplit();
             }
             Destroy(gameObject);
+            AudioManager.Instance.AudioSelection(1, 1);
         }
 
         if (collision.gameObject.CompareTag("Shield"))
         {
             Destroy(gameObject);
+            AudioManager.Instance.AudioSelection(1, 1);
         }
     }
 

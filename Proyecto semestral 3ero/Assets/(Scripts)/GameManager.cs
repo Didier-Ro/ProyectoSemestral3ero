@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _gameOverText = default;
     [SerializeField] private GameObject _playAgainButton = default;
     [SerializeField] private GameObject _returnMenuButton = default;
+    [SerializeField] private GameObject _continueButton = default;
+    [SerializeField] private GameObject _pauseText = default;
 
     private bool _gameRunning = true;
 
@@ -126,19 +128,26 @@ public class GameManager : MonoBehaviour
         _gameOverText.SetActive(true);
         _playAgainButton.SetActive(true);
         _returnMenuButton.SetActive(true);
+        _player.GetComponent<AudioSource>().mute = true;
     }
 
-    private void ChangeRunningState()
+    public void ChangeRunningState()
     {
         _gameRunning = !_gameRunning;
 
         if (_gameRunning)
         {
             Time.timeScale = 1f;
+            _pauseText.SetActive(false);
+            _continueButton.SetActive(false);
+            _returnMenuButton.SetActive(false);
         }
         else
         {
             Time.timeScale = 0f;
+            _pauseText.SetActive(true);
+            _continueButton.SetActive(true);
+            _returnMenuButton.SetActive(true);
         }
     } 
 

@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
         {
             _thrusting = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
 
+
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 _turnDirection = 1.0f;
@@ -69,7 +70,7 @@ public class Player : MonoBehaviour
             }
         }
     }
-
+        
     private void FixedUpdate()
     {
         if (_thrusting)
@@ -87,6 +88,7 @@ public class Player : MonoBehaviour
     {
         Bullet _bullet = Instantiate(_bulletPrefab, transform.position, transform.rotation);
         _bullet.Project(transform.up);
+        AudioManager.Instance.AudioSelection(0, 1);
     }
 
     IEnumerator Turbo()
@@ -105,6 +107,7 @@ public class Player : MonoBehaviour
             _rigidbody2D.velocity = Vector3.zero;
             StartCoroutine(ReduceTorque());
             _spriteRenderer.enabled = false;
+            AudioManager.Instance.AudioSelection(2, 1);
 
             GameManager.Instance.PlayerDied();
         }
@@ -120,6 +123,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Shield Power Up"))
         {
             StartCoroutine(Shield());
+            AudioManager.Instance.AudioSelection(3, 1);
         }
         Destroy(collision.gameObject);
     }
@@ -173,6 +177,7 @@ public class Player : MonoBehaviour
             {
                 Bullet bullet = Instantiate(_bulletPrefab, transform.position, transform.rotation);
                 bullet.Project(transform.up);
+                AudioManager.Instance.AudioSelection(1, 1);
                 yield return new WaitForSeconds(_delayTime);
             }
         }

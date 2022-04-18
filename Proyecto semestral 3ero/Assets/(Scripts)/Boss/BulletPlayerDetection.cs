@@ -17,6 +17,7 @@ public class BulletPlayerDetection : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             LostLife();
+            AudioManager.Instance.AudioSelection(1, 1);
         }
     }
 
