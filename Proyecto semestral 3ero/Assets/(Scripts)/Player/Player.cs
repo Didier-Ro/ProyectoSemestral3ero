@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D _rigidbody2D = default;
     private SpriteRenderer _spriteRenderer = default;
+    private Animator _animator = default;
+    private AudioSource _audioSource = default;
 
     private bool _thrusting = default;
     private bool _turboActivate = true;
@@ -25,6 +27,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _numberOfRounds = 6f;
     [SerializeField] private float _bulletsPerRound = 10f;
     [SerializeField] private float _delayTime = 0.1f;
+    [SerializeField] private Transform _firePoint = default;
 
     [SerializeField] private SpriteRenderer _shieldRenderer = default;
     [SerializeField] private GameObject _shield = default;
@@ -35,6 +38,8 @@ public class Player : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _shieldRenderer = _shield.GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -73,6 +78,8 @@ public class Player : MonoBehaviour
         
     private void FixedUpdate()
     {
+        _animator.SetBool("Is Moving", _thrusting);
+        _audioSource.mute = !_thrusting;
         if (_thrusting)
         {
             _rigidbody2D.AddForce(transform.up * _playerSpeed);
@@ -86,7 +93,7 @@ public class Player : MonoBehaviour
 
     private void Shoot()
     {
-        Bullet _bullet = Instantiate(_bulletPrefab, transform.position, transform.rotation);
+        Bullet _bullet = Instantiate(_bulletPrefab, _firePoint.position, transform.rotation);
         _bullet.Project(transform.up);
         AudioManager.Instance.AudioSelection(0, 1);
     }
