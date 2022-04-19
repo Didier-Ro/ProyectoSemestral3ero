@@ -524,6 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1997655076}
   _boss: {fileID: 5288063069349375254, guid: cbc9ad41a866ddf4d869d0bf2cfe29a7, type: 3}
+  _explotionBoss: {fileID: 1956042492337712, guid: 055b9a89354106b4e878044d7c873d61, type: 3}
   _spawnBoss: {fileID: 725319288}
   _scoreToAppearBoss: 0
   _bossMaxScore: 200
@@ -3028,6 +3029,7 @@ MonoBehaviour:
   _bulletsPerRound: 10
   _delayTime: 0.1
   _firePoint: {fileID: 996443143}
+  _flashShootEffect: {fileID: 1755576720659562, guid: af5c31ccbd2425e4f95c6bed021f004a, type: 3}
   _shieldRenderer: {fileID: 1542404698}
   _shield: {fileID: 1542404695}
   _shieldTime: 6

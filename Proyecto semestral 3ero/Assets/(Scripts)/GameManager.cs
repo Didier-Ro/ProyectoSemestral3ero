@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject _bossPrefab = default;
     [SerializeField] private GameObject _boss = default;
+    [SerializeField] private GameObject _explotionBoss = default;
     [SerializeField] private Transform _spawnBoss = default;
     [SerializeField] private int _scoreToAppearBoss = default;
     [SerializeField] private int _bossMaxScore = 1000;
@@ -102,6 +103,7 @@ public class GameManager : MonoBehaviour
 
     public void BossDead()
     {
+        GameObject explotion = Instantiate(_explotionBoss, _bossPrefab.transform.position, Quaternion.identity);
         Destroy(_bossPrefab);
         _bossOnField = false;
         _bossMaxScore = _score * 2;

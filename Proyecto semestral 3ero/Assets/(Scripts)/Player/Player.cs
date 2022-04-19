@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _bulletsPerRound = 10f;
     [SerializeField] private float _delayTime = 0.1f;
     [SerializeField] private Transform _firePoint = default;
+    [SerializeField] private GameObject _flashShootEffect = default;
 
     [SerializeField] private SpriteRenderer _shieldRenderer = default;
     [SerializeField] private GameObject _shield = default;
@@ -95,6 +96,7 @@ public class Player : MonoBehaviour
     {
         Bullet _bullet = Instantiate(_bulletPrefab, _firePoint.position, transform.rotation);
         _bullet.Project(transform.up);
+        GameObject flash = Instantiate(_flashShootEffect, _firePoint.position, transform.rotation);
         AudioManager.Instance.AudioSelection(0, 1);
     }
 

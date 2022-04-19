@@ -16,6 +16,8 @@ public class Asteroid : MonoBehaviour
 
     [SerializeField] private float _minSizeToSplit = 0.5f;
 
+    [SerializeField] private GameObject _explotionEffect = default;
+
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -54,12 +56,14 @@ public class Asteroid : MonoBehaviour
                 CreateSplit();
             }
             Destroy(gameObject);
+            GameObject explotion = Instantiate(_explotionEffect, transform.position, transform.rotation);
             AudioManager.Instance.AudioSelection(1, 1);
         }
 
         if (collision.gameObject.CompareTag("Shield"))
         {
             Destroy(gameObject);
+            GameObject explotion = Instantiate(_explotionEffect, transform.position, transform.rotation);
             AudioManager.Instance.AudioSelection(1, 1);
         }
     }
