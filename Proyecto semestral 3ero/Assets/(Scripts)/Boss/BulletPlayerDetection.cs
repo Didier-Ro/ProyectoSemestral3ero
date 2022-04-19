@@ -21,6 +21,7 @@ public class BulletPlayerDetection : MonoBehaviour
             LostLife();
             AudioManager.Instance.AudioSelection(1, 1);
             GameObject impact = Instantiate(_hit, collision.gameObject.transform.position, transform.rotation);
+            CamaraManager.Instance.ShakeCamara();
         }
     }
 

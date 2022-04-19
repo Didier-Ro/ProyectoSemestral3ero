@@ -131,6 +131,7 @@ public class GameManager : MonoBehaviour
         _playAgainButton.SetActive(true);
         _returnMenuButton.SetActive(true);
         _player.GetComponent<AudioSource>().mute = true;
+        _player.enabled = false;
     }
 
     public void ChangeRunningState()

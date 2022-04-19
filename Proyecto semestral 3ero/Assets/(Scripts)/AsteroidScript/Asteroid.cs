@@ -57,6 +57,7 @@ public class Asteroid : MonoBehaviour
             }
             Destroy(gameObject);
             GameObject explotion = Instantiate(_explotionEffect, transform.position, transform.rotation);
+            CamaraManager.Instance.ShakeCamara();
             AudioManager.Instance.AudioSelection(1, 1);
         }
 

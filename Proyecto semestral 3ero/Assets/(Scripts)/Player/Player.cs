@@ -30,7 +30,6 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _firePoint = default;
     [SerializeField] private GameObject _flashShootEffect = default;
 
-    [SerializeField] private SpriteRenderer _shieldRenderer = default;
     [SerializeField] private GameObject _shield = default;
     [SerializeField] private float _shieldTime = 6f;
 
@@ -38,7 +37,6 @@ public class Player : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _shieldRenderer = _shield.GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
     }
@@ -194,10 +192,10 @@ public class Player : MonoBehaviour
 
     IEnumerator Shield()
     {
-        _shieldRenderer.enabled = true;
+        _shield.SetActive(true);
         _shield.layer = LayerMask.NameToLayer("Shield");
         yield return new WaitForSeconds(_shieldTime);
-        _shieldRenderer.enabled = false;
+        _shield.SetActive(false);
         _shield.layer = LayerMask.NameToLayer("Ignore Collisions");
     }
 }

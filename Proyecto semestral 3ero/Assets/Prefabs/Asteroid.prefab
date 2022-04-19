@@ -152,4 +152,4 @@ MonoBehaviour:
   _speed: 10
   _lifeTime: 30
   _minSizeToSplit: 0.7
-  _explotionEffect: {fileID: 1661712401075916, guid: ff603a5c6ea52f943b91ebf74f513828, type: 3}
+  _explotionEffect: {fileID: 4680408625956644526, guid: 8fdb2b651046a0d498d073312bb07515, type: 3}
