@@ -4,7 +4,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _speed = 500.0f;
 
-    [SerializeField] private float _lifeTime = 10.0f;
+    [SerializeField] private float _lifeTime = 3f;
 
     private Rigidbody2D _rigidbody2D = default;
     private SpriteRenderer _spriteRenderer = default;
@@ -27,6 +27,6 @@ public class Bullet : MonoBehaviour
         _rigidbody2D.velocity = Vector3.zero;
         _spriteRenderer.enabled = false;
         _circleCollider2D.enabled = false;
-        Destroy(gameObject, 3);
+        Destroy(gameObject, _lifeTime);
     }
 }

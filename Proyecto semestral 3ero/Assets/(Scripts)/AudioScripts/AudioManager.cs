@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
 
     private AudioSource _audioSource;
 
-    [SerializeField] AudioClip[] _audioClips = default;
+    [SerializeField] private AudioClip[] _audioClips = default;
 
     private void Awake()
     {
