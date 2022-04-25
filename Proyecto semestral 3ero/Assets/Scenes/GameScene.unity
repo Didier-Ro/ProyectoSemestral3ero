@@ -417,6 +417,10 @@ MonoBehaviour:
   _strength: 1
   _vibrato: 8
   _randomness: 100
+  _duration2: 1
+  _strength2: 1
+  _vibrato2: 5
+  _randomness2: 100
 --- !u!4 &453657133
 Transform:
   m_ObjectHideFlags: 0
@@ -3374,6 +3378,7 @@ MonoBehaviour:
   _flashShootEffect: {fileID: 3968764366538160027, guid: cb8d07a5e4dba0946ab82b8da0171ea5, type: 3}
   _shield: {fileID: 1542404695}
   _shieldTime: 6
+  _explotionEffect: {fileID: 1128761695048245795, guid: bdd10649fe63be94da772a5bfd69c771, type: 3}
 --- !u!50 &1997655077
 Rigidbody2D:
   serializedVersion: 4
@@ -3460,7 +3465,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: fb1efa5b8f9273448af6c035e7d74042, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

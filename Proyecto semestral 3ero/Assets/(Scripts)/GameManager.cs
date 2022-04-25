@@ -127,11 +127,12 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
+        _player.GetComponent<BoxCollider2D>().enabled = false;
+        _player.enabled = false;
         _gameOverText.SetActive(true);
         _playAgainButton.SetActive(true);
         _returnMenuButton.SetActive(true);
         _player.GetComponent<AudioSource>().mute = true;
-        _player.enabled = false;
     }
 
     public void ChangeRunningState()

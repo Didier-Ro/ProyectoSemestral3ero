@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _shield = default;
     [SerializeField] private float _shieldTime = 6f;
 
+    [SerializeField] private GameObject _explotionEffect = default;
+
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -113,6 +115,8 @@ public class Player : MonoBehaviour
         {
             _rigidbody2D.velocity = Vector3.zero;
             StartCoroutine(ReduceTorque());
+            GameObject explotion = Instantiate(_explotionEffect, transform.position, transform.rotation);
+            CamaraManager.Instance.StrongShakeCamara();
             _spriteRenderer.enabled = false;
             AudioManager.Instance.AudioSelection(2, 1);
 
