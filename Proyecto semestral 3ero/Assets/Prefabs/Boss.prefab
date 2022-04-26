@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3805b59f8743f4e49b4babeffd80564e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bossPosition: 3.5
-  _bossPositionMaxlimit: 3.85
+  _bossPosition: 2.5
+  _bossPositionMaxlimit: 3
   _rightWall: {fileID: 0}
   _leftWall: {fileID: 0}
   _speed: 5
@@ -121,6 +121,7 @@ MonoBehaviour:
   _playerPosition: {fileID: 0}
   _delayShootTime: 2
   _passedTime: 1
+  _bossShootSFX: {fileID: 8300000, guid: 63254b11bbe538547852b626b8703b45, type: 3}
 --- !u!114 &8394761151498719409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +137,7 @@ MonoBehaviour:
   _bossLife: 200
   _playerDamage: 50
   _hit: {fileID: 100004, guid: 5b52f1ff89b4dc94087ad66d49be9d6b, type: 3}
+  _explosionEffect: {fileID: 8300000, guid: 724aede20b2cbd941aa5cbcfafb40264, type: 3}
 --- !u!70 &627811425
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

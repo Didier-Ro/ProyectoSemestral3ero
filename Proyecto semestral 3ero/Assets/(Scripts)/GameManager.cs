@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _bossMaxScore = 1000;
     [SerializeField] private bool _isBossAlive = false;
     [SerializeField] private bool _bossOnField = false;
+    [SerializeField] private AudioClip _bossMusic = default;
+    [SerializeField] private AudioClip _defaultMusic = default;
 
     [SerializeField] private Text _scoreText = default;
     [SerializeField] private string _scoreString = "Score: ";
@@ -99,12 +101,14 @@ public class GameManager : MonoBehaviour
     {
         _bossOnField = true;
         _bossPrefab = Instantiate(_boss, _spawnBoss.transform.position, Quaternion.identity);
+        AudioManager.Instance.MusicSelection(_bossMusic);
     }
 
     public void BossDead()
     {
         GameObject explotion = Instantiate(_explotionBoss, _bossPrefab.transform.position, Quaternion.identity);
         Destroy(_bossPrefab);
+        AudioManager.Instance.MusicSelection(_defaultMusic);
         _bossOnField = false;
         _bossMaxScore = _score * 2;
     }

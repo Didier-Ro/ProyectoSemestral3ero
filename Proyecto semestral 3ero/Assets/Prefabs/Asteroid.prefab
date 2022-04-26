@@ -153,3 +153,4 @@ MonoBehaviour:
   _lifeTime: 30
   _minSizeToSplit: 0.7
   _explotionEffect: {fileID: 4680408625956644526, guid: 8fdb2b651046a0d498d073312bb07515, type: 3}
+  _explotionSFX: {fileID: 8300000, guid: 724aede20b2cbd941aa5cbcfafb40264, type: 3}

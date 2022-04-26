@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
 
-    private AudioSource _audioSource;
+    [SerializeField] private AudioSource _sfxSource;
 
-    [SerializeField] private AudioClip[] _audioClips = default;
+    [SerializeField] private AudioSource _musicSource;
 
     private void Awake()
     {
@@ -20,12 +18,16 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        _audioSource = GetComponent<AudioSource>();
     }
     
-    public void AudioSelection(int index, float volume)
+    public void SFXSelection(AudioClip clip, float volume)
     {
-        _audioSource.PlayOneShot(_audioClips[index], volume);
+        _sfxSource.PlayOneShot(clip, volume);
+    }
+
+    public void MusicSelection(AudioClip clip)
+    {
+        _musicSource.clip = clip;
+        _musicSource.Play();
     }
 }
