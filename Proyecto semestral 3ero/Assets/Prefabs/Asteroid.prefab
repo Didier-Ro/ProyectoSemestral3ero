@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5844714621037707480}
   - component: {fileID: 6281063817958599322}
   - component: {fileID: 2672221442573012356}
-  - component: {fileID: 8396523602133924426}
   - component: {fileID: -2866264049762334104}
+  - component: {fileID: 70750174713546898}
   m_Layer: 7
   m_Name: Asteroid
   m_TagString: Asteroid
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: d8ab3b7a78b394d42a668c9735ddf166, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 1bd6c74c058d5f143a391104c445e845, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,33 +105,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &8396523602133924426
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215670572641694792}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.050216198, y: 0.090388656}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
-    newSize: {x: 1.28, y: 1.28}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.2209501, y: 2.4663026}
-  m_EdgeRadius: 0
+  m_Constraints: 0
 --- !u!114 &-2866264049762334104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,12 +119,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprites:
-  - {fileID: 21300000, guid: a7247485709ef784da7abdbd0f7fa9f6, type: 3}
-  - {fileID: 21300000, guid: 0004002fbdc225e4486201fcb9be33ba, type: 3}
-  - {fileID: 21300000, guid: 54a6272b55d9c424e8c5cedf41590b62, type: 3}
-  - {fileID: 21300000, guid: 4710d843d8182d847a5f0a948a78929f, type: 3}
+  - {fileID: 21300006, guid: 1bd6c74c058d5f143a391104c445e845, type: 3}
+  - {fileID: 21300008, guid: 1bd6c74c058d5f143a391104c445e845, type: 3}
+  - {fileID: 21300010, guid: 1bd6c74c058d5f143a391104c445e845, type: 3}
+  - {fileID: 21300012, guid: 1bd6c74c058d5f143a391104c445e845, type: 3}
   _speed: 10
   _lifeTime: 30
   _minSizeToSplit: 0.7
   _explotionEffect: {fileID: 4680408625956644526, guid: 8fdb2b651046a0d498d073312bb07515, type: 3}
   _explotionSFX: {fileID: 8300000, guid: 724aede20b2cbd941aa5cbcfafb40264, type: 3}
+--- !u!58 &70750174713546898
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215670572641694792}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.10375452, y: -0.07781637}
+  serializedVersion: 2
+  m_Radius: 1.6990423

@@ -13,6 +13,8 @@ public class Asteroid : MonoBehaviour
 
     [SerializeField] private float _speed = 50.0f;
     [SerializeField] private float _lifeTime = 30.0f;
+    private float _turnDirection = default;
+    private float _turnSpeed = 10f;
 
     [SerializeField] private float _minSizeToSplit = 0.5f;
 
@@ -24,7 +26,15 @@ public class Asteroid : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
+    private void Start()
+    {
+        _turnDirection = Random.Range(-1, 1);
+    }
 
+    private void Update()
+    {
+        _rigidbody2D.AddTorque(_turnDirection * _turnSpeed * Time.deltaTime);
+    }
     public void Initialize(bool randomizeSize)
     {
         if (randomizeSize)
