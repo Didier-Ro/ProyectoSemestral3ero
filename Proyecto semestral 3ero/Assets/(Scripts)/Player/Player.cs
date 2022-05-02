@@ -86,6 +86,7 @@ public class Player : MonoBehaviour
     {
         _animator.SetBool("Is Moving", _thrusting);
         _rocketSFX.mute = !_thrusting;
+
         if (_thrusting)
         {
             _rigidbody2D.AddForce(transform.up * _playerSpeed);
@@ -93,7 +94,12 @@ public class Player : MonoBehaviour
 
         if (_turnDirection != 0.0f)
         {
+            _rigidbody2D.angularDrag = 0.0f;
             _rigidbody2D.AddTorque(_turnDirection * _turnSpeed);
+        }
+        else
+        {
+            _rigidbody2D.angularDrag = 5f;
         }
     }
 

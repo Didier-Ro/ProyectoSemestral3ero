@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935a42332d4af3c439a2f52ade31f63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bossLife: 200
+  _bossLife: 500
   _playerDamage: 50
   _hit: {fileID: 100004, guid: 5b52f1ff89b4dc94087ad66d49be9d6b, type: 3}
   _explosionEffect: {fileID: 8300000, guid: 724aede20b2cbd941aa5cbcfafb40264, type: 3}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5019536, g: 0.5019536, b: 0.5019536, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -506,6 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027d12f832c66a742920489ce7624267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 519420031}
   _duration: 1
   _strength: 1
   _vibrato: 8
@@ -671,7 +672,7 @@ MonoBehaviour:
   _explotionBoss: {fileID: 6540189554874426828, guid: 8ff861055fe1d414795f25951a467af6, type: 3}
   _spawnBoss: {fileID: 725319288}
   _scoreToAppearBoss: 0
-  _bossMaxScore: 200
+  _bossMaxScore: 500
   _isBossAlive: 0
   _bossOnField: 0
   _bossMusic: {fileID: 8300000, guid: b1f5b1b97139dbf408a3b3c49868416d, type: 3}
@@ -754,7 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
+  m_Color: {r: 1, g: 0.52609485, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -763,11 +764,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 88639e6a886674d4abc8e24c0c1c5d1d, type: 3}
-    m_FontSize: 39
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 43
+    m_MaxSize: 55
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1010,8 +1011,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -95, y: -25}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -93, y: -30.066}
+  m_SizeDelta: {x: 102.9012, y: 125.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &584368356
 MonoBehaviour:
@@ -1511,7 +1512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.64627093, g: 0.9716981, b: 0.8731473, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1644,7 +1645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7028302, b: 0.87739044, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2429,7 +2430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 59.999916, y: -55.00002}
+  m_AnchoredPosition: {x: 43, y: -55.00002}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1274828115
@@ -2975,7 +2976,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 87.82703, y: -24.13153}
+  m_AnchoredPosition: {x: 90, y: -31}
   m_SizeDelta: {x: 175.654, y: 48.263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1573415138
@@ -3000,7 +3001,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 88639e6a886674d4abc8e24c0c1c5d1d, type: 3}
-    m_FontSize: 20
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -3502,7 +3503,7 @@ MonoBehaviour:
   _powerUps:
   - {fileID: 9114294616456965883, guid: 82ce2dcf03b4b3c498f7e6275c11f9eb, type: 3}
   - {fileID: 1284002116807064958, guid: 4fa1b055ec955214a926386a9589c33c, type: 3}
-  _spawningTime: 40
+  _spawningTime: 35
 --- !u!4 &1979115410
 Transform:
   m_ObjectHideFlags: 0
@@ -3527,12 +3528,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1997655080}
   - component: {fileID: 1997655079}
-  - component: {fileID: 1997655078}
   - component: {fileID: 1997655077}
   - component: {fileID: 1997655076}
   - component: {fileID: 1997655081}
   - component: {fileID: 1997655082}
   - component: {fileID: 1997655083}
+  - component: {fileID: 1997655078}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -3556,7 +3557,7 @@ MonoBehaviour:
   _rocketSFX: {fileID: 1997655082}
   _shieldSFX: {fileID: 1997655083}
   _playerSpeed: 1
-  _turnSpeed: 0.2
+  _turnSpeed: 0.5
   _timeToReturnAngularDrag: 0.2
   _turboPlayer: 1
   _turboReloadTime: 5
@@ -3595,8 +3596,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &1997655078
-BoxCollider2D:
+--- !u!70 &1997655078
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3608,19 +3609,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2753663, y: 1.65}
-    newSize: {x: 1, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.42, y: 0.62}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.000000059604645, y: 0.17671406}
+  m_Size: {x: 0.8122536, y: 1.296572}
+  m_Direction: 0
 --- !u!212 &1997655079
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -1,11 +1,14 @@
 using UnityEngine;
 using DG.Tweening;
+using System.Collections;
 
 public class CamaraManager : MonoBehaviour
 {
     public static CamaraManager Instance { get; private set; }
 
     private Tween _shake = default;
+
+    [SerializeField] Camera _camera = default;
 
     [SerializeField] private float _duration = 1;
     [SerializeField] private float _strength = 8;
@@ -33,11 +36,20 @@ public class CamaraManager : MonoBehaviour
     {
         _shake?.Kill();
         _shake = Camera.main.DOShakePosition(_duration, _strength, _vibrato, _randomness);
+        StartCoroutine(ReturnPosition());
     }
 
     public void SlowShakeCamera()
     {
         _shake?.Kill();
         _shake = Camera.main.DOShakePosition(_duration2, _strength2, _vibrato2, _randomness2);
+        StartCoroutine(ReturnPosition());
+    }
+
+    IEnumerator ReturnPosition()
+    {
+        yield return new WaitForSeconds(1f);
+        _camera.transform.DOMove(new Vector3(0, 0, -10), 1f);
+        yield break;
     }
 }

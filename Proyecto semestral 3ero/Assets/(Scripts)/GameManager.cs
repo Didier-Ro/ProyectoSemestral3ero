@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        _player.GetComponent<BoxCollider2D>().enabled = false;
+        _player.GetComponent<CapsuleCollider2D>().enabled = false;
         _player.enabled = false;
         _gameOverText.SetActive(true);
         _playAgainButton.SetActive(true);
