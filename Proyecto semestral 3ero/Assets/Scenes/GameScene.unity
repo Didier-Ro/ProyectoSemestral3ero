@@ -3557,7 +3557,7 @@ MonoBehaviour:
   _rocketSFX: {fileID: 1997655082}
   _shieldSFX: {fileID: 1997655083}
   _playerSpeed: 1
-  _turnSpeed: 0.5
+  _turnSpeed: 0.2
   _timeToReturnAngularDrag: 0.2
   _turboPlayer: 1
   _turboReloadTime: 5
@@ -3672,7 +3672,7 @@ Transform:
   m_GameObject: {fileID: 1997655075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1542404696}
   - {fileID: 996443143}

@@ -49,7 +49,7 @@ public class CamaraManager : MonoBehaviour
     IEnumerator ReturnPosition()
     {
         yield return new WaitForSeconds(1f);
-        _camera.transform.DOMove(new Vector3(0, 0, -10), 1f);
+        _camera.transform.DOMove(new Vector3(0, 0, -10), 0.5f);
         yield break;
     }
 }
