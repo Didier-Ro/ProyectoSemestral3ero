@@ -14,7 +14,7 @@ public class Asteroid : MonoBehaviour
     [SerializeField] private float _initialMass = 2f; 
 
     [SerializeField] private float _speed = 50.0f;
-    [SerializeField] private float _lifeTime = 30.0f;
+    [SerializeField] private float _lifeTime = 45.0f;
     private float _turnDirection = default;
     [SerializeField] private float _turnSpeed = 10f;
 
