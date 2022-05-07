@@ -5,6 +5,9 @@ public class BulletPlayerDetection : MonoBehaviour
     [SerializeField] private int _bossLife = 200;
     [SerializeField] private int _playerDamage = 50;
 
+    [SerializeField] private GameObject _hit = default;
+    [SerializeField] private AudioClip _explosionEffect = default;
+
     private void Update()
     {
         if (_bossLife <= 0)
@@ -17,6 +20,9 @@ public class BulletPlayerDetection : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             LostLife();
+            AudioManager.Instance.SFXSelection(_explosionEffect, 1);
+            GameObject impact = Instantiate(_hit, collision.gameObject.transform.position, transform.rotation);
+            CamaraManager.Instance.SlowShakeCamera();
         }
     }
 

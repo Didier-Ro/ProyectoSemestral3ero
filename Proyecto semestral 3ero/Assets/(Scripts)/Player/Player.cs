@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D _rigidbody2D = default;
     private SpriteRenderer _spriteRenderer = default;
+    private Animator _animator = default;
+    [SerializeField] private AudioSource _rocketSFX = default;
+    [SerializeField] private AudioSource _shieldSFX = default;
 
     private bool _thrusting = default;
     private bool _turboActivate = true;
@@ -25,16 +28,24 @@ public class Player : MonoBehaviour
     [SerializeField] private float _numberOfRounds = 6f;
     [SerializeField] private float _bulletsPerRound = 10f;
     [SerializeField] private float _delayTime = 0.1f;
+    [SerializeField] private Transform _firePoint = default;
+    [SerializeField] private GameObject _flashShootEffect = default;
 
-    [SerializeField] private SpriteRenderer _shieldRenderer = default;
     [SerializeField] private GameObject _shield = default;
     [SerializeField] private float _shieldTime = 6f;
+    private bool _isShieldActive = false;
+
+    [SerializeField] private GameObject _explotionEffect = default;
+
+    [SerializeField] private AudioClip _shootSFX = default;
+    [SerializeField] private AudioClip _hitSFX = default;
+    [SerializeField] private AudioClip _powerUpSFX = default;
 
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _shieldRenderer = _shield.GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -68,10 +79,14 @@ public class Player : MonoBehaviour
                 }
             }
         }
+        _shieldSFX.mute = !_isShieldActive;
     }
 
     private void FixedUpdate()
     {
+        _animator.SetBool("Is Moving", _thrusting);
+        _rocketSFX.mute = !_thrusting;
+
         if (_thrusting)
         {
             _rigidbody2D.AddForce(transform.up * _playerSpeed);
@@ -79,14 +94,21 @@ public class Player : MonoBehaviour
 
         if (_turnDirection != 0.0f)
         {
+            _rigidbody2D.angularDrag = 0.0f;
             _rigidbody2D.AddTorque(_turnDirection * _turnSpeed);
+        }
+        else
+        {
+            _rigidbody2D.angularDrag = 5f;
         }
     }
 
     private void Shoot()
     {
-        Bullet _bullet = Instantiate(_bulletPrefab, transform.position, transform.rotation);
+        Bullet _bullet = Instantiate(_bulletPrefab, _firePoint.position, transform.rotation);
         _bullet.Project(transform.up);
+        GameObject flash = Instantiate(_flashShootEffect, _firePoint.position, transform.rotation);
+        AudioManager.Instance.SFXSelection(_shootSFX, 1);
     }
 
     IEnumerator Turbo()
@@ -104,7 +126,10 @@ public class Player : MonoBehaviour
         {
             _rigidbody2D.velocity = Vector3.zero;
             StartCoroutine(ReduceTorque());
+            GameObject explotion = Instantiate(_explotionEffect, transform.position, transform.rotation);
+            CamaraManager.Instance.StrongShakeCamara();
             _spriteRenderer.enabled = false;
+            AudioManager.Instance.SFXSelection(_hitSFX, 1);
 
             GameManager.Instance.PlayerDied();
         }
@@ -115,12 +140,15 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Infinity Power Up"))
         {
             StartCoroutine(InfinityShoot());
+            AudioManager.Instance.SFXSelection(_powerUpSFX, 1);
         }
 
         if (collision.gameObject.CompareTag("Shield Power Up"))
         {
             StartCoroutine(Shield());
+            AudioManager.Instance.SFXSelection(_powerUpSFX, 1);
         }
+        Destroy(collision.gameObject);
     }
 
     public void Respawn()
@@ -172,6 +200,7 @@ public class Player : MonoBehaviour
             {
                 Bullet bullet = Instantiate(_bulletPrefab, transform.position, transform.rotation);
                 bullet.Project(transform.up);
+                AudioManager.Instance.SFXSelection(_shootSFX, 1);
                 yield return new WaitForSeconds(_delayTime);
             }
         }
@@ -179,10 +208,12 @@ public class Player : MonoBehaviour
 
     IEnumerator Shield()
     {
-        _shieldRenderer.enabled = true;
+        _shield.SetActive(true);
+        _isShieldActive = true;
         _shield.layer = LayerMask.NameToLayer("Shield");
         yield return new WaitForSeconds(_shieldTime);
-        _shieldRenderer.enabled = false;
+        _shield.SetActive(false);
+        _isShieldActive = false;
         _shield.layer = LayerMask.NameToLayer("Ignore Collisions");
     }
 }
