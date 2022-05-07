@@ -12,6 +12,8 @@ TagManager:
   - Shield
   - Shield Power Up
   - Infinity Power Up
+  - FxTemporaire
+  - Missile
   layers:
   - Default
   - TransparentFX
@@ -27,7 +29,7 @@ TagManager:
   - BossBullet
   - Shield
   - WallDestroyer
-  - 
+  - Missile
   - 
   - 
   - 

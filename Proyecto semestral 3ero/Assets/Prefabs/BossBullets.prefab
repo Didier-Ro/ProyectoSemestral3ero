@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 7445c960f17b7d74da8670cf5d4c8a49, type: 3}
   m_Color: {r: 0.735849, g: 0.10065861, b: 0.10065861, a: 1}
   m_FlipX: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf36cd051e164844b9896acc5511d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 100
+  _speed: 25
   _lifeTime: 10
 --- !u!96 &-1416629875888127663
 TrailRenderer:

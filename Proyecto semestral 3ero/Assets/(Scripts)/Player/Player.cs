@@ -122,8 +122,9 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Asteroid") || collision.gameObject.CompareTag("BossBullet"))
+        if (collision.gameObject.CompareTag("Asteroid") || collision.gameObject.CompareTag("BossBullet") || collision.gameObject.CompareTag("Missile"))
         {
+            StopAllCoroutines();
             _rigidbody2D.velocity = Vector3.zero;
             StartCoroutine(ReduceTorque());
             GameObject explotion = Instantiate(_explotionEffect, transform.position, transform.rotation);
