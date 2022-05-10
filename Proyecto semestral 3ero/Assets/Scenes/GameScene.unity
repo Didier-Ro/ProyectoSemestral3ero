@@ -3582,7 +3582,8 @@ MonoBehaviour:
   _rocketSFX: {fileID: 1997655082}
   _shieldSFX: {fileID: 1997655083}
   _playerSpeed: 1
-  _turnSpeed: 0.2
+  _turnSpeed: 0.3
+  _angularDrag: 1.8
   _timeToReturnAngularDrag: 0.2
   _turboPlayer: 1
   _turboReloadTime: 5
@@ -3612,7 +3613,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.5
+  m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 0
   m_GravityScale: 0
