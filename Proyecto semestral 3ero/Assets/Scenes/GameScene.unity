@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 95102093}
   - component: {fileID: 95102092}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: AsteroidSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1402,7 +1402,7 @@ Transform:
   - {fileID: 611343576}
   - {fileID: 1028706530}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &893761975
 GameObject:
@@ -3528,6 +3528,7 @@ MonoBehaviour:
   _powerUps:
   - {fileID: 9114294616456965883, guid: 82ce2dcf03b4b3c498f7e6275c11f9eb, type: 3}
   - {fileID: 1284002116807064958, guid: 4fa1b055ec955214a926386a9589c33c, type: 3}
+  _poofParticle: {fileID: 85514878520356832, guid: cae6bc73c37833745bcfa33aedb64619, type: 3}
   _spawningTime: 35
 --- !u!4 &1979115410
 Transform:
@@ -3582,7 +3583,7 @@ MonoBehaviour:
   _rocketSFX: {fileID: 1997655082}
   _shieldSFX: {fileID: 1997655083}
   _playerSpeed: 1
-  _turnSpeed: 0.3
+  _turnSpeed: 5
   _angularDrag: 1.8
   _timeToReturnAngularDrag: 0.2
   _turboPlayer: 1
@@ -3703,7 +3704,7 @@ Transform:
   - {fileID: 1542404696}
   - {fileID: 996443143}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1997655081
 Animator:

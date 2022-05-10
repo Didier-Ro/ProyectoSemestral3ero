@@ -95,9 +95,10 @@ public class Player : MonoBehaviour
 
         if (_turnDirection != 0.0f)
         {
-            _rigidbody2D.angularDrag = 0.0f;
+            //_rigidbody2D.angularDrag = 0.0f;
             _rigidbody2D.AddTorque(_turnDirection * _turnSpeed);
-            _rigidbody2D.angularDrag = _angularDrag;
+            //_rigidbody2D.angularDrag = _angularDrag;
+            _rigidbody2D.angularVelocity = Mathf.Clamp(_rigidbody2D.angularVelocity, 0, 1f);
         }
         else
         {

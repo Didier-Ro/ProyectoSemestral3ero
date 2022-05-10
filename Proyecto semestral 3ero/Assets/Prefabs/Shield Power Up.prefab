@@ -123,3 +123,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeTime: 15
+  _destroyEffect: {fileID: 6708922639678601156, guid: 6ef08286ed9c0124fbdf003eb50b4341, type: 3}
