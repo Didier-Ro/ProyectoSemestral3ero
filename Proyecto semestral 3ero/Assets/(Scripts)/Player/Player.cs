@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float _playerSpeed = 1f;
     [SerializeField] private float _turnSpeed = 1f;
-    [SerializeField] private float _angularDrag = default;
+    //[SerializeField] private float _angularDrag = default;
     [SerializeField] private float _timeToReturnAngularDrag = 0.2f;
     [SerializeField] private float _turboPlayer = 1f;
     [SerializeField] private float _turboReloadTime = 5f;
@@ -95,9 +95,7 @@ public class Player : MonoBehaviour
 
         if (_turnDirection != 0.0f)
         {
-            //_rigidbody2D.angularDrag = 0.0f;
             _rigidbody2D.AddTorque(_turnDirection * _turnSpeed);
-            //_rigidbody2D.angularDrag = _angularDrag;
             _rigidbody2D.angularVelocity = Mathf.Clamp(_rigidbody2D.angularVelocity, 0, 1f);
         }
         else
