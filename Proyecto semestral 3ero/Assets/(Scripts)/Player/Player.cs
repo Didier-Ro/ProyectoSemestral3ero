@@ -126,6 +126,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Asteroid") || collision.gameObject.CompareTag("BossBullet") || collision.gameObject.CompareTag("Missile"))
         {
             StopAllCoroutines();
+            _shield.SetActive(false);
             _rigidbody2D.velocity = Vector3.zero;
             StartCoroutine(ReduceTorque());
             GameObject explotion = Instantiate(_explotionEffect, transform.position, transform.rotation);
