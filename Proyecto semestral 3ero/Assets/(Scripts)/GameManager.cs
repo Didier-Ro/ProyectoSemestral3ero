@@ -34,11 +34,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _asteroidMiddleSizeScore = 50;
     [SerializeField] private int _asteroidMaxSizeScore = 25;
 
+    [SerializeField] private GameObject _pausePanel = default;
     [SerializeField] private GameObject _gameOverText = default;
     [SerializeField] private GameObject _playAgainButton = default;
     [SerializeField] private GameObject _returnMenuButton = default;
     [SerializeField] private GameObject _continueButton = default;
     [SerializeField] private GameObject _pauseText = default;
+    [SerializeField] private GameObject _configurationsButton = default;
 
     private bool _gameRunning = true;
 
@@ -133,8 +135,10 @@ public class GameManager : MonoBehaviour
     {
         _player.GetComponent<CapsuleCollider2D>().enabled = false;
         _player.enabled = false;
+        _pausePanel.SetActive(true);
         _gameOverText.SetActive(true);
         _playAgainButton.SetActive(true);
+        _configurationsButton.SetActive(true);
         _returnMenuButton.SetActive(true);
         _player.GetComponent<AudioSource>().mute = true;
     }
@@ -146,15 +150,19 @@ public class GameManager : MonoBehaviour
         if (_gameRunning)
         {
             Time.timeScale = 1f;
+            _pausePanel.SetActive(false);
             _pauseText.SetActive(false);
             _continueButton.SetActive(false);
+            _configurationsButton.SetActive(false);
             _returnMenuButton.SetActive(false);
         }
         else
         {
             Time.timeScale = 0f;
+            _pausePanel.SetActive(true);
             _pauseText.SetActive(true);
             _continueButton.SetActive(true);
+            _configurationsButton.SetActive(true);
             _returnMenuButton.SetActive(true);
         }
     } 

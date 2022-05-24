@@ -27,8 +27,10 @@ public class MusicConfig : MonoBehaviour
         _musicVolume.volume = _musicSlider.value;
     }
 
-    public void ChangeSfxVolume()
+    public void ChangeSfxVolume(float value)
     {
-
+        _sliderSfxValue = value;
+        PlayerPrefs.SetFloat("sfxVolume", _sliderSfxValue);
+        _sfxVolume.volume = _sfxSlider.value;
     }
 }
