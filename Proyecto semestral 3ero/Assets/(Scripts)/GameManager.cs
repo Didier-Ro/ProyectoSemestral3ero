@@ -54,7 +54,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
         _lifeText.text = _lifeString + _lifes.ToString();
     }
 
@@ -166,6 +165,12 @@ public class GameManager : MonoBehaviour
             _returnMenuButton.SetActive(true);
         }
     } 
+
+    public void SetConfigurations()
+    {
+        _player.SetTurnConfigurations();
+        AudioManager.Instance.SetAudioConfigurations();
+    }
 
     public bool IsGameRunnig()
     {

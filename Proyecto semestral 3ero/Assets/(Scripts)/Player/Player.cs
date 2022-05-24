@@ -17,11 +17,11 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float _playerSpeed = 1f;
     [SerializeField] private float _turnSpeed = 1f;
-    //[SerializeField] private float _angularDrag = default;
     [SerializeField] private float _timeToReturnAngularDrag = 0.2f;
     [SerializeField] private float _turboPlayer = 1f;
     [SerializeField] private float _turboReloadTime = 5f;
     [SerializeField] private float _turboLockedTime = 0.2f;
+    private float _defaultTurnSpeed = 5f;
 
     [SerializeField] private float _invulnerabilityTime = 3f;
     [SerializeField] private float _numberOfOpacityStepsPerSecond = 2f;
@@ -218,5 +218,10 @@ public class Player : MonoBehaviour
         _shield.SetActive(false);
         _isShieldActive = false;
         _shield.layer = LayerMask.NameToLayer("Ignore Collisions");
+    }
+
+    public void SetTurnConfigurations()
+    {
+        _turnSpeed = PlayerPrefs.GetFloat("Turn", _defaultTurnSpeed);
     }
 }
