@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Text _scoreText = default;
     [SerializeField] private string _scoreString = "Score: ";
+    [SerializeField] private int _highScore = default;
 
     [SerializeField] private Text _lifeText = default;
     [SerializeField] private string _lifeString = "X";
@@ -57,6 +58,10 @@ public class GameManager : MonoBehaviour
         _lifeText.text = _lifeString + _lifes.ToString();
     }
 
+    private void Start()
+    {
+        _highScore = PlayerPrefs.GetInt("HighScore");
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -75,6 +80,11 @@ public class GameManager : MonoBehaviour
                 AppearBoss();
                 _isBossAlive = false;
             }
+        }
+
+        if(_score > _highScore)
+        {
+            PlayerPrefs.SetInt("HighScore", _score);
         }
     }
 
