@@ -122,3 +122,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b010dbcb55195074588e129e2f7f44d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lifeTime: 15
+  _destroyEffect: {fileID: 6708922639678601156, guid: 6ef08286ed9c0124fbdf003eb50b4341, type: 3}

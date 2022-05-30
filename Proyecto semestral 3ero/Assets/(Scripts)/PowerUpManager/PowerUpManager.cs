@@ -4,6 +4,7 @@ using System.Collections;
 public class PowerUpManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] _powerUps = default;
+    [SerializeField] private GameObject _poofParticle = default;
     private Vector2 _position = default;
     private float MinX = -9.5f;
     private float MaxX = 9.5f;
@@ -27,6 +28,7 @@ public class PowerUpManager : MonoBehaviour
         int NumberofPowerUps = Random.Range(0, _powerUps.Length);
         _position = new Vector2(Random.Range(MinX, MaxX), Random.Range(MinY, MaxY));
         GameObject powerUp = Instantiate(_powerUps[NumberofPowerUps], _position, Quaternion.identity);
+        GameObject poof = Instantiate(_poofParticle, powerUp.transform.position, Quaternion.identity);
         _spawnPowerUP = true;
     }
 }

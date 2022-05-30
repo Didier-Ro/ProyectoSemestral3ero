@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _turboPlayer = 1f;
     [SerializeField] private float _turboReloadTime = 5f;
     [SerializeField] private float _turboLockedTime = 0.2f;
+    private float _defaultTurnSpeed = 5f;
 
     [SerializeField] private float _invulnerabilityTime = 3f;
     [SerializeField] private float _numberOfOpacityStepsPerSecond = 2f;
@@ -94,8 +95,8 @@ public class Player : MonoBehaviour
 
         if (_turnDirection != 0.0f)
         {
-            _rigidbody2D.angularDrag = 0.0f;
             _rigidbody2D.AddTorque(_turnDirection * _turnSpeed);
+            _rigidbody2D.angularVelocity = Mathf.Clamp(_rigidbody2D.angularVelocity, 0, 1f);
         }
         else
         {
@@ -125,6 +126,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Asteroid") || collision.gameObject.CompareTag("BossBullet") || collision.gameObject.CompareTag("Missile"))
         {
             StopAllCoroutines();
+            _shield.SetActive(false);
             _rigidbody2D.velocity = Vector3.zero;
             StartCoroutine(ReduceTorque());
             GameObject explotion = Instantiate(_explotionEffect, transform.position, transform.rotation);
@@ -216,5 +218,10 @@ public class Player : MonoBehaviour
         _shield.SetActive(false);
         _isShieldActive = false;
         _shield.layer = LayerMask.NameToLayer("Ignore Collisions");
+    }
+
+    public void SetTurnConfigurations()
+    {
+        _turnSpeed = PlayerPrefs.GetFloat("Turn", _defaultTurnSpeed);
     }
 }
