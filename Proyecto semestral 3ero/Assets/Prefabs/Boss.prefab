@@ -117,13 +117,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4329a766a302ecc49a13aaacaf01963c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boosBulletsPrefab: {fileID: 2743307364227523120, guid: e19deb7a0888f33459da7cf1ab519d14, type: 3}
+  _boosBulletsPrefab: {fileID: 8446992690567303134, guid: 855b2bbee6b96fd46b8b845889204d6e, type: 3}
   _missilePrefab: {fileID: 2762167166395747498, guid: 5291f6313d326ad4eb9bd6150b5d5ab7, type: 3}
   _playerPosition: {fileID: 0}
   _delayShootTime: 2
   _passedTime: 1
   _numberOfBullets: 4
   _numberOfMissiles: 4
+  _delayMissileTime: 1
+  _waitingTime: 10
   _bossShootSFX: {fileID: 8300000, guid: 63254b11bbe538547852b626b8703b45, type: 3}
 --- !u!114 &8394761151498719409
 MonoBehaviour:
