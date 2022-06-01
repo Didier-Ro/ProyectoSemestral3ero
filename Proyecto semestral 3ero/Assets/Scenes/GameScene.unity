@@ -969,8 +969,8 @@ MonoBehaviour:
   _randomness: 100
   _duration2: 1
   _strength2: 1
-  _vibrato2: 5
-  _randomness2: 100
+  _vibrato2: 3
+  _randomness2: 200
 --- !u!4 &453657133
 Transform:
   m_ObjectHideFlags: 0
