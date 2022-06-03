@@ -4,6 +4,7 @@ public class BossBullets : MonoBehaviour
 {
     private Rigidbody2D _rigidBody2D = default;
 
+    //[SerializeField] private GameObject _particle = default;
     [SerializeField] private float _speed = 100.0f;
     [SerializeField] private float _lifeTime = 10f;
     private SpriteRenderer _spriteRenderer = default;
@@ -24,9 +25,6 @@ public class BossBullets : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _rigidBody2D.velocity = Vector3.zero;
-        _spriteRenderer.enabled = false;
-        _circleCollider2D.enabled = false;
-        Destroy(gameObject, 3);
+        Destroy(gameObject);
     }
 }

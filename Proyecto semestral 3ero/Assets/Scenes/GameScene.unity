@@ -969,8 +969,8 @@ MonoBehaviour:
   _randomness: 100
   _duration2: 1
   _strength2: 1
-  _vibrato2: 5
-  _randomness2: 100
+  _vibrato2: 3
+  _randomness2: 200
 --- !u!4 &453657133
 Transform:
   m_ObjectHideFlags: 0
@@ -1237,6 +1237,7 @@ MonoBehaviour:
   _defaultMusic: {fileID: 8300000, guid: bfc83ceac28789446a35644c8f53a429, type: 3}
   _scoreText: {fileID: 1573415138}
   _scoreString: 'Score: '
+  _highScore: 0
   _lifeText: {fileID: 1274828115}
   _lifeString: 'X '
   _lifes: 3
