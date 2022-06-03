@@ -4,7 +4,6 @@ public class BossBullets : MonoBehaviour
 {
     private Rigidbody2D _rigidBody2D = default;
 
-    //[SerializeField] private GameObject _particle = default;
     [SerializeField] private float _speed = 100.0f;
     [SerializeField] private float _lifeTime = 10f;
     private SpriteRenderer _spriteRenderer = default;
