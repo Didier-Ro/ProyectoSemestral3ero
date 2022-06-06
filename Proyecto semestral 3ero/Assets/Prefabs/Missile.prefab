@@ -83,7 +83,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.62280464
+        value: 0.28946877
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -216,7 +216,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0a13ae8fce1413e4eba7382f1d1ad358, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e7a15e121df1d0f41ba03eb3195a31ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
