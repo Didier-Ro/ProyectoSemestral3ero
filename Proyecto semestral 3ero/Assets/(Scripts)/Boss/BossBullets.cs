@@ -6,6 +6,7 @@ public class BossBullets : MonoBehaviour
 
     [SerializeField] private float _speed = 100.0f;
     [SerializeField] private float _lifeTime = 10f;
+    [SerializeField] private GameObject _explosionParticle = default;
     private SpriteRenderer _spriteRenderer = default;
     private CircleCollider2D _circleCollider2D = default;
 
@@ -24,6 +25,9 @@ public class BossBullets : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        _circleCollider2D.enabled = false;
+        GameObject explosion = Instantiate(_explosionParticle, transform.position, transform.rotation);;
+        _rigidBody2D.velocity = Vector2.zero;
+        _rigidBody2D.angularVelocity = 0;
     }
 }
