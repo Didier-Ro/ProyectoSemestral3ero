@@ -1,0 +1,751 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3486131532806064489
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_Name
+      value: CFXM_SmokeExplosionAlt Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: SizeBySpeedModule.range.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.x.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.y.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.z.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthY.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthZ.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strength.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.x.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.y.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.z.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthY.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthZ.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeY.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeZ.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: VelocityModule.speedModifier.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.magnitude.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: VelocityModule.speedModifier.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: SizeBySpeedModule.range.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.x.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.y.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.z.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthY.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthZ.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strength.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.x.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.y.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.z.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthY.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthZ.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeY.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeZ.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: VelocityModule.speedModifier.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.magnitude.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: VelocityModule.speedModifier.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: SizeBySpeedModule.range.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.x.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.y.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.z.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthY.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthZ.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strength.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.x.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.y.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.z.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthY.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthZ.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeY.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeZ.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: VelocityModule.speedModifier.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.magnitude.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: VelocityModule.speedModifier.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: SizeBySpeedModule.range.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.x.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.y.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.z.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthY.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthZ.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strength.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.x.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.y.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.z.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthY.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthZ.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeY.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeZ.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: VelocityModule.speedModifier.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.magnitude.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: VelocityModule.speedModifier.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: SizeBySpeedModule.range.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.x.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.y.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.z.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthY.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthZ.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strength.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.x.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.y.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.z.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthY.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthZ.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeY.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeZ.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: VelocityModule.speedModifier.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.magnitude.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: VelocityModule.speedModifier.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: SizeBySpeedModule.range.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.x.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.y.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.z.scalar
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthY.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthZ.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.175
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strength.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.x.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.y.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.z.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthY.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: NoiseModule.strengthZ.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeY.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSizeZ.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: VelocityModule.speedModifier.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: ClampVelocityModule.magnitude.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: VelocityModule.speedModifier.minScalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900002, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900004, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900006, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900008, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900010, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 714fe68d1bdbba84f9ee530135492817, type: 3}

@@ -75,7 +75,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Time: 2
   m_Parameters:
     serializedVersion: 3
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 6083650070010629530}
   - component: {fileID: 8446992690567303134}
   m_Layer: 11
-  m_Name: Circle
+  m_Name: BossBullet
   m_TagString: BossBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,3 +279,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 25
   _lifeTime: 10
+  _explosionParticle: {fileID: 4526225904440446832, guid: 9e7f5c9eb76c898468ae556c8ed88286, type: 3}
